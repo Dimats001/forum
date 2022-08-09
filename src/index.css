@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.headForum{
+    background-color: red;
+    height: 100px;
+}
+
+.theme{
+    width: 16%;
+    height: 88.921px;
+    background-color: green;
+    border: black solid 2px;
+}
+
+#content_header{
+    background-color: blue;
+    width: 84%;
+    border: black solid 2px;
+}
+
+#message{
+    background-color: orange;
+    border: black solid 2px;
+    width: 84%;
+    height: 50px;
+}
