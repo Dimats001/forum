@@ -30,6 +30,11 @@ code {
 
 }
 
+.discussion{
+    background-color: pink;
+    border: black solid 2px;
+}
+
 .message{
     background-color: orange;
     border: black solid 2px;

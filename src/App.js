@@ -13,9 +13,9 @@ class App extends Component {
         }
     }
 
-    onChange = () => {
-        this.setState({theme: "chosen"})
-        console.log("Theme is chosen!")
+    onChange = (th) => {
+        this.setState({theme: th})
+        console.log("Theme is chosen: " + th)
     }
 
     render(){
@@ -25,7 +25,7 @@ class App extends Component {
                 <Head />
                 <div className = "flexbox-container">
                         <div id = "themes-container"><Themes th = {this.state.theme} onChange = {this.onChange} /></div>
-                        <div id = "content-container"><Content th = {this.state.theme} onChange = {this.onChange}/></div>
+                        <div id = "content-container"><Content th = {this.state.theme} /></div>
                 </div>
             </div>
         )
