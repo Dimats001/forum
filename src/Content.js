@@ -1,28 +1,36 @@
-import React, { useContext} from 'react'
-import {contextTheme} from './App'
+import React, { Component } from 'react'
 
-const Content = (props) => {
-        const state = useContext(contextTheme)
-        if(state == "noTheme")
+class Content extends Component {
+    constructor(props){
+        super(props)
+    }
+    render(){
+        if(this.props.th == "noTheme")
             return(
                 <div>
-                    <ContentHeader theme = {props.value} />
-                    <ContentMessages theme = {props.value} />
+                    <ContentHeader />
+                    <ContentMessages />
                 </div>
             )
+        else
+            return(
+                <div>
+                    Тему выбрали!
+                </div>
+            )
+        }
 }
 
-const ContentHeader = (props) => {
-    const state = useContext(contextTheme)
-    if(state == "noTheme")
+class ContentHeader extends Component {
+    render(){
         return(
             <div id = "content_header">Тема пока не выбрана. Воспользуйтесь панелью слева</div>
         )
+    }
 }
 
-const ContentMessages = (props) => {
-    const state = useContext(contextTheme)
-    if(state != "noTheme")
+class ContentMessages extends Component {
+    render(){
         return(
             <React.Fragment>
                 <Message text = "dddd"/>
@@ -30,19 +38,22 @@ const ContentMessages = (props) => {
                 <Message text = "degh5"/>
             </React.Fragment>
         )
+    }
 }
 
-const Message = (props) => {
-    return(
-        <div className = "message">
-            <div className = "message-avatar">
-                Ава
+class Message extends Component {
+    render(){
+        return(
+            <div className = "message">
+                <div className = "message-avatar">
+                    Ава
+                </div>
+                <div className = "message-text">
+                    {this.props.text}
+                </div>
             </div>
-            <div className = "message-text">
-                {props.text}
-            </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default Content
