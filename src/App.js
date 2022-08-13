@@ -1,18 +1,25 @@
-import React, { Component } from 'react'
+import React, { createContext, useContext, Context, useState, useMemo } from 'react'
 import Head from './Head'
 import Themes from './Themes'
 import Content from './Content'
 
-class App extends Component{
-    render(){
+export const contextTheme = createContext("noTheme")
+
+const App = () => {
+        const [Th, setTh] = useState('noTheme')
+        const value = useContext(contextTheme)
+
         return(
-            <React.Fragment>
+            <div>
                 <Head />
-                    <Themes />
-                    <Content />
-            </React.Fragment>
+                <div className = "flexbox-container">
+                    <contextTheme.Provider value = {value}>
+                        <div id = "themes-container"><Themes /></div>
+                        <div id = "content-container"><Content /></div>
+                    </contextTheme.Provider>
+                </div>
+            </div>
         )
     }
-}
 
-export default App
+export default App;

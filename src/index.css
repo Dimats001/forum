@@ -13,26 +13,49 @@ code {
 }
 
 .headForum{
-    background-color: red;
+    background-color: lightblue;
     height: 100px;
 }
 
 .theme{
-    width: 16%;
     height: 88.921px;
-    background-color: green;
+    background-color: #bbb;
     border: black solid 2px;
+
 }
 
 #content_header{
     background-color: blue;
-    width: 84%;
     border: black solid 2px;
+
 }
 
-#message{
+.message{
     background-color: orange;
     border: black solid 2px;
-    width: 84%;
     height: 50px;
+    display: flex;
+}
+
+.message-avatar{
+    background-color: red;
+    border: black solid 2px;
+    margin: 0.5rem;
+}
+
+.message-text{
+    background-color: yellow;
+    border: black solid 2px;
+    margin: 0.5rem;
+}
+
+.flexbox-container {
+    display: flex;
+}
+
+#themes-container{
+    width: 16%;
+}
+#content-container{
+    width: 84%;
 }
